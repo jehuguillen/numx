@@ -1,0 +1,6 @@
+<%= simple_form_for [@course, @skill] do |f| %>
+  <%= f.input :name %>
+
+  <%= link_to 'Cancel', course_path(@course), class: 'btn btn-default' %>
+  <%= f.submit nil, class: 'btn btn-primary' %>
+<% end %>
