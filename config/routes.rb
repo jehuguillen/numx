@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'pages/page1'
+
+  get 'pages/page2'
+
   resources :users
 
   resources :courses do
