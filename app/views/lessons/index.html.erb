@@ -1,0 +1,22 @@
+<p>index</p>
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to 'Add Lesson', new_lesson_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @lessons.each do |l| %>
+      <tr>
+        <td><%= link_to l.name, lesson_path(l) %></td>
+        <td><%= link_to 'Edit', edit_lesson_path(l), class: 'btn btn-default' %></td>
+        <td><%= link_to 'Delete', lesson_path(l), method: :delete, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

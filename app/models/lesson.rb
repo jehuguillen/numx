@@ -1,4 +1,4 @@
 class Lesson < ApplicationRecord
-  belongs_to :Skill
+  belongs_to :skill
   has_many :questions
 end

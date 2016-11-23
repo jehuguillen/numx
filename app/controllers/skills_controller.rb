@@ -1,16 +1,19 @@
 class SkillsController < ApplicationController
-  before_action :set_course
   before_action :set_skill, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @skills = Skill.all
+  end
+
   def new
-    @skill = @course.skills.build
+    @skill = Skill.new
   end
 
   def create
-    @skill = @course.skills.build skill_params
-    if @skill.save
-      redirect_to course_path(@course)
-    else
+    @skill = Skill.new skill_params
+     if @skill.save
+      redirect_to @skill
+     else
       render :new
     end
   end
@@ -22,9 +25,8 @@ class SkillsController < ApplicationController
   end
 
   def update
-    @skill = @course.skills.build skill_params
-    if @skill.save
-      redirect_to course_path(@course)
+    if @skill.update skill_params
+      redirect_to @skill
     else
       render :edit
     end
@@ -32,20 +34,16 @@ class SkillsController < ApplicationController
 
   def destroy
     @skill.destroy
-    redirect_to @course
+    redirect_to skills_path
   end
 
   private
 
-  def set_course
-    @course = Course.find params[:course_id]
-  end
-
   def set_skill
-    @course = @course.skills.find params[:id]
+    @skill = Skill.find params[:id]
   end
 
   def skill_params
-    params.require(:skill).permit(:name)
+    params.require(:skill).permit(:name, :course_id)
   end
 end

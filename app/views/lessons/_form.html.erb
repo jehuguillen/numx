@@ -1,0 +1,12 @@
+<% if @lesson.errors.any? %>
+  <% @lesson.errors.full_messages.each do |m| %>
+    <p><%= m %></p>
+  <% end %>
+<% end %>
+<%= simple_form_for @lesson do |f| %>
+  <%= f.input :name %>
+  <%= f.association :skill %>
+
+  <%= link_to 'Cancel', lessons_path, class: 'btn btn-default' %>
+  <%= f.submit nil, class: 'btn btn-primary' %>
+<% end %> 

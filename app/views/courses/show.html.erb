@@ -1,10 +1,6 @@
 
 <p>Estoy en courses/show.html.erb, Aquí puedo Add skills y al presionar "El SKILL" me debería de mandar a lesson/show.html.erb</p>
-<div class="row">
-  <div class="col-md-12">
-    <%= link_to 'Add Skill', new_course_skill_path(@course), class: 'btn btn-primary' %>
-  </div>
-</div>
+
 
 <div class="row">
   <div class="col-md-6">
@@ -17,20 +13,4 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-12">
-    <table class="table">
-      <thead>
-        <th>Name</th>
-      </thead>
-      <tbody>
-        <% @course.skills.each do |s| %>
-          <tr>
-            <td><%= link_to s.name, course_skill_path(@course, s) %></td>
-            <td><%= link_to 'X', course_skill_path(@course, s), method: :delete, class: 'btn btn-danger btn-sm'%></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
+

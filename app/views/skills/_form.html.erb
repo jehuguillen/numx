@@ -1,6 +1,12 @@
-<%= simple_form_for [@course, @skill] do |f| %>
+<% if @skill.errors.any? %>
+  <% @skill.errors.full_messages.each do |m| %>
+    <p><%= m %></p>
+  <% end %>
+<% end %>
+<%= simple_form_for @skill do |f| %>
   <%= f.input :name %>
+  <%= f.association :course %>
 
-  <%= link_to 'Cancel', course_path(@course), class: 'btn btn-default' %>
+  <%= link_to 'Cancel', skills_path, class: 'btn btn-default' %>
   <%= f.submit nil, class: 'btn btn-primary' %>
 <% end %>
