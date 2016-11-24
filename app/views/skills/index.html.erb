@@ -1,23 +1,21 @@
-<div class="row">
-     <div class="col-md-12">
-        <%= link_to 'Add Skill', new_skill_path, class: 'btn btn-info' %>
-     </div>
-</div>
-
-<input name="buscador"> </input>
-
-<div class="container">
-  <h2>Select the course to Add the skill by course</h2>
-  <p></p>
-  <div class="btn-group btn-group-justified">
-    <a href="#" class="btn btn-info">Álgebra</a>
-    <a href="#" class="btn btn-info">Geometría</a>
-    <a href="#" class="btn btn-info">Geometría Ánalitica</a>
-    <a href="#" class="btn btn-info">Cálculo Diferencial</a>
+<nav class="navbar navbar-default">
+  <div class="btn-group btn-group-justified"> 
+    <div class="btn btn-link"><%= link_to 'COURSES', courses_path, class: 'btn btn-link' %></div>
+    <div class="btn btn-link"><%= link_to 'SKILLS', skills_path, class: 'btn btn-link' %></div>
+    <div class="btn btn-link"><%= link_to 'LESSONS', lessons_path, class: 'btn btn-link' %></div>
+    <div class="btn btn-link"><%= link_to 'QUESTIONS', lessons_path, class: 'btn btn-link' %></div>
+    <div class="btn btn-link"><%= link_to 'ANSWERS',  lessons_path, class: 'btn btn-link' %></div>
   </div>
-</div>
+</nav>
 
-<div></div>
+<br>
+
+  <div class="btn-group btn-group-justified">
+      <%= link_to 'New Skill', new_skill_path, class: 'btn btn-info' %>
+  </div>
+
+<br>
+<br>
 
 <table class="col-md-6, table">
   <thead>

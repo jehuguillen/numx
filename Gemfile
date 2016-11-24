@@ -3,6 +3,7 @@ gem 'dotenv-rails'
 gem 'mini_magick'
 gem 'simple_form'
 gem 'rails_12factor'
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'

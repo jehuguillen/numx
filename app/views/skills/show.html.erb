@@ -1,11 +1,29 @@
+ 
+<button type="button" class="btn btn-default">
+      <span class="glyphicon glyphicon-plus"></span>
+        <%= link_to ' Add New Skill', new_skill_path%>
+</button>
 
-<label for="">Name</label>
-<p><%= @skill.name %></p>
-
-<label for="">Course</label>
-<p><%= @skill.course.name %></p>
+<hr>
+<br>
 
 <div class="row">
-  <div class="col-md-12">
-    <%= link_to 'Volver', skills_path, class: 'btn btn-info' %>
+   <div class="col-md-6">
+      <label for="">Name</label>
+           <%= @skill.name %>
+   </div>
+   <div class="col-md-6">
+      <label for="">Course</label>
+           <%= @skill.course.name %>
+   </div>
 </div>
+
+<hr>
+
+<button type="button" class="btn btn-default">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+        <%= link_to ' Back', skills_path %>
+</button>
+
+
+

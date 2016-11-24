@@ -1,12 +1,27 @@
-<p>index</p>
-<div class="row">
-  <div class="col-md-12">
-    <%= link_to 'Add Lesson', new_lesson_path, class: 'btn btn-primary' %>
+<nav class="navbar navbar-default">
+  <div class="btn-group btn-group-justified"> 
+    <div class="btn btn-link"><%= link_to 'COURSES', courses_path, class: 'btn btn-link' %></div>
+    <div class="btn btn-link"><%= link_to 'SKILLS', skills_path, class: 'btn btn-link' %></div>
+    <div class="btn btn-link"><%= link_to 'LESSONS', lessons_path, class: 'btn btn-link' %></div>
+    <div class="btn btn-link"><%= link_to 'QUESTIONS', lessons_path, class: 'btn btn-link' %></div>
+    <div class="btn btn-link"><%= link_to 'ANSWERS', lessons_path, class: 'btn btn-link' %></div>
   </div>
-</div>
-<table class="table">
+</nav>
+
+<br>
+
+  <div class="btn-group btn-group-justified">
+      <%= link_to 'New Lesson', new_lesson_path, class: 'btn btn-info' %>
+  </div>
+
+<br>
+<br>
+
+<table class="col-md-6, table">
   <thead>
     <th>Name</th>
+    <th>Skill</th>
+    <th>Course</th>
     <th></th>
     <th></th>
   </thead>
@@ -14,8 +29,10 @@
     <% @lessons.each do |l| %>
       <tr>
         <td><%= link_to l.name, lesson_path(l) %></td>
+        <td><%= l.name %></td>
+        <td></td>
         <td><%= link_to 'Edit', edit_lesson_path(l), class: 'btn btn-default' %></td>
-        <td><%= link_to 'Delete', lesson_path(l), method: :delete, class: 'btn btn-danger' %></td>
+        <td><%= link_to 'X', lesson_path(l), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>

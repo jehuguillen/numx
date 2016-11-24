@@ -1,20 +1,30 @@
 
-<p>Estoy en courses/show.html.erb, Aquí puedo Add skills y al presionar "El SKILL" me debería de mandar a lesson/show.html.erb</p>
+<button type="button" class="btn btn-default">
+      <span class="glyphicon glyphicon-plus"></span>
+        <%= link_to ' Add New Course', new_course_path %>
+</button>
+  
+<hr>
+<br>
 
 <div class="row">
-	<div class="col-md-12">
-	<%= link_to 'New Skill', skills_path, class: 'btn btn-info btn-sm'%></td>
-
-
-<div class="row">
-  <div class="col-md-6">
-    <label for="">Name:</label>
-    <%= @course.name %>
-  </div>
-  <div class="col-md-6">
-    <label for="">Code:</label>
-    <%= @course.code %>
-  </div>
+   <div class="col-md-6">
+      <label for="">Name:</label>
+        <%= @course.name %>
+   </div>
+   <div class="col-md-6">
+       <label for="">Code:</label>
+         <%= @course.code %>
+   </div>
 </div>
+
+<hr>
+
+<button type="button" class="btn btn-default">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+        <%= link_to 'Back', courses_path %>
+</button>
+
+
 
 

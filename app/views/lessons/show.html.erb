@@ -1,5 +1,26 @@
-<label for="">Name</label>
-<p><%= @lesson.name %></p>
-</br>
-<label for="">Skill</label>
-<p><%= @lesson.skill.name %></p>
+ 
+<button type="button" class="btn btn-default">
+      <span class="glyphicon glyphicon-plus"></span>
+        <%= link_to ' Add New Lesson', new_skill_path%>
+</button>
+
+<hr>
+<br>
+
+<div class="row">
+   <div class="col-md-6">
+      <label for="">Name</label>
+        <%= @lesson.name %>
+   </div>
+   <div class="col-md-6">
+      <label for="">Skill</label>
+        <%= @lesson.skill.name %>
+   </div>
+</div>
+
+<hr>
+
+<button type="button" class="btn btn-default">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+        <%= link_to ' Back', skills_path %>
+</button>

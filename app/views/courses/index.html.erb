@@ -1,12 +1,25 @@
+<nav class="navbar navbar-default">
+  <div class="btn-group btn-group-justified"> 
+    <div class="btn btn-link"><%= link_to 'COURSES', courses_path, class: 'btn btn-link' %></div>
+    <div class="btn btn-link"><%= link_to 'SKILLS', skills_path, class: 'btn btn-link' %></div>
+    <div class="btn btn-link"><%= link_to 'LESSONS', lessons_path, class: 'btn btn-link' %></div>
+    <div class="btn btn-link"><%= link_to 'QUESTIONS', lessons_path, class: 'btn btn-link' %></div>
+    <div class="btn btn-link"><%= link_to 'ANSWERS', lessons_path, class: 'btn btn-link' %></div>
+  </div>
+</nav>
 
-<div class="row">
-	<div class="col-md-12">
-	<%= link_to 'New Course', new_course_path, class: 'btn btn-info btn-sm'%></td>
+<br>
+
+  <div class="btn-group btn-group-justified" >
+	  <%= link_to 'New Course', new_course_path, class: 'btn btn-info'%>
+  </div>
+
+<br>
+<br>
 
 
-<div class="row">
-	<div class="col-md-12">
-	<table class="table">
+
+<table class="col-md-6, table">
 		<thead>
 			<th>Name</th>
 			<th>Code</th>
@@ -17,8 +30,8 @@
 			<% @courses.each do |c| %>
 			<tr>
 				<td><%= link_to c.name, course_path(c) %></td>
-				<td><%= c.code%></td>
-				<td><%= link_to 'X', course_path(c), method: :delete, class: 'btn btn-danger btn-sm'%></td>
+				<td><%= c.code %></td>
+				<td><%= link_to 'X', course_path(c), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'%></td>
 			</tr>
 			<% end %>
 		</tbody>
