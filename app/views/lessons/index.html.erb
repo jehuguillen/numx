@@ -29,8 +29,8 @@
     <% @lessons.each do |l| %>
       <tr>
         <td><%= link_to l.name, lesson_path(l) %></td>
-        <td><%= l.name %></td>
-        <td></td>
+        <td><%= l.skill.name %></td>
+        <td><%= l.skill.course.name %></td>
         <td><%= link_to 'Edit', edit_lesson_path(l), class: 'btn btn-default' %></td>
         <td><%= link_to 'X', lesson_path(l), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
