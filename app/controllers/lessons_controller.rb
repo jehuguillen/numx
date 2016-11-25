@@ -21,6 +21,7 @@ before_action :set_lesson, only: [:show, :edit, :update, :destroy]
   def show
   end
 
+
   def edit
   end
   
@@ -44,6 +45,6 @@ before_action :set_lesson, only: [:show, :edit, :update, :destroy]
   end
 
   def lesson_params
-    params.require(:lesson).permit(:name, :skill_id)
+    params.require(:lesson).permit(:name, :skill_id, :description)
   end
 	end

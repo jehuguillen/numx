@@ -6,6 +6,7 @@
 <%= simple_form_for @lesson do |f| %>
   <%= f.input :name %>
   <%= f.association :skill %>
+  <%= f.input :description %>
 
   <%= link_to 'Cancel', lessons_path, class: 'btn btn-default' %>
   <%= f.submit nil, class: 'btn btn-primary' %>

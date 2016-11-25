@@ -1,20 +1,24 @@
  
 <button type="button" class="btn btn-default">
       <span class="glyphicon glyphicon-plus"></span>
-        <%= link_to ' Add New Lesson', new_skill_path%>
+        <%= link_to ' Add New Lesson', new_lesson_path %>
 </button>
 
 <hr>
 <br>
 
 <div class="row">
-   <div class="col-md-6">
+   <div class="col-md-4">
       <label for="">Name</label>
         <%= @lesson.name %>
    </div>
-   <div class="col-md-6">
+   <div class="col-md-4">
       <label for="">Skill</label>
         <%= @lesson.skill.name %>
+   </div>
+   <div class="col-md-4">
+      <label for="">Description</label>
+        <%= @lesson.description %>
    </div>
 </div>
 
@@ -22,5 +26,9 @@
 
 <button type="button" class="btn btn-default">
       <span class="glyphicon glyphicon-chevron-left"></span>
-        <%= link_to ' Back', skills_path %>
+        <%= link_to ' Back', lessons_path %>
+</button>
+<button type="button" class="btn btn-default">
+      <span class="glyphicon glyphicon-pencil"></span>
+        <%= link_to ' Edit', edit_lesson_path %>
 </button>
