@@ -1,0 +1,13 @@
+<% if @question.errors.any? %>
+  <% @question.errors.full_messages.each do |m| %>
+    <p><%= m %></p>
+  <% end %>
+<% end %>
+<%= simple_form_for @question do |f| %>
+  <%= f.input :name %>
+  <%= f.association :lesson, :label_method => :complete_name  %>
+  
+
+  <%= link_to 'Cancel', questions_path, class: 'btn btn-default' %>
+  <%= f.submit nil, class: 'btn btn-primary' %>
+<% end %> 
