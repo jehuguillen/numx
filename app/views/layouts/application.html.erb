@@ -1,19 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Numx</title>
-    <%= csrf_meta_tags %>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Numx</title>
+  <%= csrf_meta_tags %>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <% if user_signed_in? %>
+  <li>
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  </li>
+  <% else %>
+  <li>
+    <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+  <% end %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <nav class="navbar navbar-default">
+    <div class="btn-group btn-group-justified"> 
+      <% if can? :read, Course %>
+        <div class="btn btn-link"><%= link_to 'COURSES', courses_path, class: 'btn btn-link' %></div>
+      <% end %>
+
+      <% if can? :read, Skill %>
+        <div class="btn btn-link"><%= link_to 'SKILLS', skills_path, class: 'btn btn-link' %></div>
+      <% end %>
+
+
+      <% if can? :read, Lesson %>
+        <div class="btn btn-link"><%= link_to 'LESSONS', lessons_path, class: 'btn btn-link' %></div>
+      <% end %>
+
+
+      <% if can? :read, Question %>
+        <div class="btn btn-link"><%= link_to 'QUESTIONS', questions_path, class: 'btn btn-link' %></div>
+      <% end %>
+
+
+      <% if can?(:read, Answer) %>
+        <div class="btn btn-link"><%= link_to 'ANSWERS', answers_path, class: 'btn btn-link' %></div>
+      <% end %>
+    </div>
+  </nav>
+
+  <br>
+
+  <%= yield %>
+</body>
 </html>
