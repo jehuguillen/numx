@@ -11,21 +11,47 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <style type="text/css">
+    nav {
+      background-color: #00b0f0;
+    }
+    body {
+      background-color: white;
+    }
+  </style>
 </head>
-
+<!-- NAVBAR -->
 <body>
-  <% if user_signed_in? %>
-  <li>
-    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-  </li>
-  <% else %>
-  <li>
-    <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-  <% end %>
+<nav class="navbar transparent navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">NumX</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to 'Home', root_path, class: 'btn btn-link' %></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+      <li>
+        <%= link_to('Salir', destroy_user_session_path, :method => :delete) %>        
+      </li>
+      <% else %>
+      <li>
+        <%= link_to('Ingresar', new_user_session_path, class: 'btn btn-link')  %>  
+      </li>
+      <% end %>      
+    </ul>
+  </div>
+</nav>
+
+
+<!-- END NAVBAR -->
+
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+<% if user_signed_in? %>
   <nav class="navbar navbar-default">
     <div class="btn-group btn-group-justified"> 
       <% if can? :read, Course %>
@@ -52,9 +78,8 @@
       <% end %>
     </div>
   </nav>
-
   <br>
-
+ <% end %> 
   <%= yield %>
 </body>
 </html>
