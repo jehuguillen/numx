@@ -2,7 +2,12 @@ class SkillsController < ApplicationController
   before_action :set_skill, only: [:show, :edit, :update, :destroy]
 
   def index
-    @skills = Skill.all
+    if params[:course_id]
+      @course = current_user.courses.find params[:course_id]
+      @skills = @course.skills
+    else
+      @skills = Skill.all
+    end
   end
 
   def new

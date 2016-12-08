@@ -9,7 +9,7 @@ class Ability
       can :manage, Course
       can :manage, Skill
       can :manage, Lesson
-      #can :manage, Question
+      can :manage, Question
       #can :manage, Answer
     elsif user.has_role? :student
       can :read, :all

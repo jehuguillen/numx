@@ -1,5 +1,30 @@
+<!-- <style type="text/css">
+	.all {
+		width: 1280px;
+		height: 653px;
+		background-color: red;
+	}
+</style> -->
+<div class="all">
+	
+</div>
 
- <div class="btn btn-link"><%= link_to 'Soy Un Profesor', new_user_registration_path(:role => "1"), class: 'btn btn-link' %></div>
- <div class="btn btn-link"><%= link_to 'Soy Un Estudiente', new_user_registration_path(:role => "2"), class: 'btn btn-link' %></div>
+<% unless user_signed_in? %>
+	<div class="btn btn-link"><%= link_to 'Soy Un Profesor', new_user_registration_path(:role => "1"), class: 'btn btn-link' %></div>
+	<div class="btn btn-link"><%= link_to 'Soy Un Estudiente', new_user_registration_path(:role => "2"), class: 'btn btn-link' %></div>
+<% end %>
 
 
+
+<% if user_signed_in? %>
+	<% if current_user.has_role? :teacher %>
+		<%= render "home/teacher_dashboard" %>
+	<% elsif current_user.has_role? :student %>
+		<%= render "home/student_dashboard" %>
+	<% end %>
+<% end %>
+
+
+<% unless user_signed_in? %>
+    <%= link_to('Ingresar', new_user_session_path, class: 'btn btn-info')  %>
+  <% end %> 

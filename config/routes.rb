@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :lessons 
   resources :questions 
   resources :answers
+
+  resources :profiles, only: [:show]
           
   end
 

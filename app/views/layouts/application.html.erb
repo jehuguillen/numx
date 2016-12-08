@@ -11,75 +11,23 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <style type="text/css">
-    nav {
-      background-color: #00b0f0;
-    }
-    body {
-      background-color: white;
-    }
-  </style>
 </head>
-<!-- NAVBAR -->
+
 <body>
-<nav class="navbar transparent navbar">
+
+  <% if user_signed_in? %>
+  <% if current_user.has_role? :teacher %>
+  <%= render "layouts/teacher_navbar" %>
+  <% elsif current_user.has_role? :student %>
+  <%= render "layouts/student_navbar" %>
+  <% end %>
+  <% end %>
+
   <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">NumX</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><%= link_to 'Home', root_path, class: 'btn btn-link' %></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <% if user_signed_in? %>
-      <li>
-        <%= link_to('Salir', destroy_user_session_path, :method => :delete) %>        
-      </li>
-      <% else %>
-      <li>
-        <%= link_to('Ingresar', new_user_session_path, class: 'btn btn-link')  %>  
-      </li>
-      <% end %>      
-    </ul>
+    <%= yield %>
   </div>
-</nav>
 
 
-<!-- END NAVBAR -->
 
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-<% if user_signed_in? %>
-  <nav class="navbar navbar-default">
-    <div class="btn-group btn-group-justified"> 
-      <% if can? :read, Course %>
-        <div class="btn btn-link"><%= link_to 'COURSES', courses_path, class: 'btn btn-link' %></div>
-      <% end %>
-
-      <% if can? :read, Skill %>
-        <div class="btn btn-link"><%= link_to 'SKILLS', skills_path, class: 'btn btn-link' %></div>
-      <% end %>
-
-
-      <% if can? :read, Lesson %>
-        <div class="btn btn-link"><%= link_to 'LESSONS', lessons_path, class: 'btn btn-link' %></div>
-      <% end %>
-
-
-      <% if can? :read, Question %>
-        <div class="btn btn-link"><%= link_to 'QUESTIONS', questions_path, class: 'btn btn-link' %></div>
-      <% end %>
-
-
-      <% if can?(:read, Answer) %>
-        <div class="btn btn-link"><%= link_to 'ANSWERS', answers_path, class: 'btn btn-link' %></div>
-      <% end %>
-    </div>
-  </nav>
-  <br>
- <% end %> 
-  <%= yield %>
 </body>
 </html>
