@@ -1,0 +1,250 @@
+<div class="row">
+	<% current_user.courses.each do |c| %>
+		<div class="col-md-4">
+			<%= link_to c.name, skills_path(course_id: c.id) %>
+		</div>  
+	<% end %>
+</div>
+
+<style type="text/css">
+  body {
+    background-color: #e9e9e9;
+  }
+  .main-right {
+    padding: 110px 40px 0 420px;
+    max-width: 1140px;
+    margin: 0 auto;
+    min-width: 1080px;
+    display: block;
+    position: relative;
+  }
+  .page-main-right {
+    width: 680px;
+    height: 9000px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    float: left;
+    margin: 0 auto 30px -380px;
+    z-index: 1;
+  }
+  .skill-tree-header{
+    color: #999;
+    display: block;
+    margin-left: 40px;
+  }
+  .skill-tree{
+    margin: 40px 0 0 0;
+  }
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .skill-tree-row{
+    margin: 0 0 40px 0;
+    text-align: center;
+    vertical-align: top;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+  }
+  .skill-icon.small {
+    width: 80px;
+    height: 80px;
+    left: -3px;
+    margin: 0 0 8px 0;
+  }
+  .skill-icon.vividpink {
+    background: #e91e63;
+  }
+  .skill-icon.brightred {
+    background: #E33030;
+  }
+  .skill-icon.blue {
+    background: #1caff6;
+  }
+  .skill-icon.green {
+    background: #7eb530;
+  }
+    .skill-icon.softcyan {
+    background: #46e5e6;
+  }
+  .skilvividpink.yellow {
+    background: #ffff00;
+  }
+  
+  .purple {
+    color: #9b5fca;
+  }
+  .skill-icon {
+    -webkit-border-radius: 400px;
+    -moz-border-radius: 400px;
+    border-radius: 400px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+  }
+  .red {
+    color: #dd381d;
+  }
+  .skill-icon.small .skill-icon-image {
+    margin: 13px 0 0 0;
+  }
+  .skill-icon.small .skill-icon-1 {
+    background-position: -50px 0;
+  }
+  .skill-icon.small .skill-icon-2 {
+    background-position: -110px 0;
+  }
+  .skill-icon.small .skill-icon-3 {
+    background-position: -165px 0;
+  }
+  .skill-icon.small .skill-icon-4 {
+    background-position: -220px 0;
+  }
+  .skill-icon.small .skill-icon-5 {
+    background-position: -275px 0;
+}
+  .skill-icon.small .skill-icon-image {
+    background-size: 550px;
+    width: 54px;
+    height: 55px
+  }
+  .skill-icon.unlocked .skill-icon-image {
+    background-image: url(<%= asset_path 'skill-i.svg' %>);
+  }
+  .skill-icon-image {
+    display: inline-block;
+  }
+  .skill-icon-strength.strength-1 {
+    background-position: -2.9879em 0;
+  }
+  .skill-icon-strength.strength-2 {
+    background-position: -3.5705em 0;
+  }
+  .skill-icon-strength.strength-3 {
+    background-position: -3em 0;
+  }
+  .skill-icon-strength.strength-4 {
+    background-position: -3em 0;
+  }
+  .skill-icon-strength-small {
+    width: 69px;
+    height: 18px;
+    top: 67px;
+    left: 4px;
+   /* background-size: 432px 432px;*/
+    font-size: 9.83em;
+  }
+  .skill-icon-strength {
+    position: absolute;
+    background: url(<%= asset_path 'skill-s.svg' %>);
+  }
+  .skill-badge-name {
+    display: block;
+    box-sizing: border-box;
+    outline: none;
+  }
+  .skill-badge-small {
+    width: 130px;
+    font-size: 15px;
+    text-align: center;
+    color: #504e4e;
+    margin: 0 5px;
+    vertical-align: top;
+    box-sizing: border-box;
+    outline: none;
+    display: inline-block;
+  }
+  a {
+    color: #999;
+    text-decoration: none;
+  }
+  .skill-badge-name .lessons-left {
+    color: #999;
+    margin: 0 0 0 5px;
+  }
+  .page-sidebar-left{
+    float: right;
+    margin: 0 0 0 40px;
+  }
+  .inner{
+    width: 340px;
+    height: 1049px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+</style>
+
+<div id="app" class="home">
+ <main class="main-right">
+  <section class="page-main-right">
+    <div class="tree">
+      <span class="skill-tree-header">
+        <h1>Unidades de Geometría</h1>
+<!--         <span class="level-text">NIVEL 5</span> -->
+      </span>
+      <ul class="skill-tree">
+        <li class="skill-tree-row row-1">
+          <span id="skill-0-1" class="skill-0">
+            <a href="/skill/en/Introduction" class="fade-this-in skill-badge-small" data-skill="C. Basicos" style="opacity: 1;">
+              <span class="skill-icon green  small unlocked ">
+                <span class="skill-icon-image skill-icon-1"></span>
+                <span class="skill-icon-strength skill-icon-strength-small  strength-2"></span>
+              </span>
+              <span class="skill-badge-name">Básicos<span class="lessons-left"></span></span>
+            </a> 
+          </span>
+        </li> 
+        <li class="skill-tree-row row-1">
+          <span id="skill-1-2" class="skill-0">
+            <a href="/skill/en/Introduction" class="fade-this-in skill-badge-small" data-skill="Ángulos" style="opacity: 1;">
+              <span class="skill-icon blue small unlocked ">
+                <span class="skill-icon-image skill-icon-2"></span>
+                <span class="skill-icon-strength skill-icon-strength-small  strength-1"></span>
+              </span>
+              <span class="skill-badge-name">Ángulos<span class="lessons-left"></span></span>
+            </a> 
+          </span>
+        </li>
+        <li class="skill-tree-row row-1">
+          <span id="skill-1-3" class="skill-0">
+            <a href="/skill/en/Introduction" class="fade-this-in skill-badge-small" data-skill="Triángulos" style="opacity: 1;">
+              <span class="skill-icon vividpink small unlocked ">
+                <span class="skill-icon-image skill-icon-3"></span>
+                <span class="skill-icon-strength skill-icon-strength-small  strength-1"></span>
+              </span>
+              <span class="skill-badge-name">Triángulos<span class="lessons-left"></span></span>
+            </a> 
+          </span>
+        </li>  
+        <li class="skill-tree-row row-3">
+          <span id="skill-1-4" class="skill-0">
+            <a href="/skill/de/Basics-2" class="fade-this-in skill-badge-small" data-skill="T. Congruentes" style="opacity: 1;">
+              <span class="skill-icon vividpink small unlocked ">
+                <span class="skill-icon-image skill-icon-4"></span>
+                <span class="skill-icon-strength skill-icon-strength-small  strength-1"></span>
+              </span>
+              <span class="skill-badge-name">T. Congruentes<span class="lessons-left"></span></span>
+            </a>
+          </span>
+          <span id="skill-2-4" class="skill-1">
+            <a href="/skill/de/Common-Phrases" class="fade-this-in skill-badge-small" data-skill="T. Semejantes" style="opacity: 1;">
+            <span class="skill-icon vividpink small unlocked ">
+              <span class="skill-icon-image skill-icon-5"></span>
+              <span class="skill-icon-strength skill-icon-strength-small  strength-1"></span>
+            </span>
+            <span class="skill-badge-name">T. Semejantes<span class="lessons-left"></span></span>
+            </a> 
+          </span></li>
+      </ul>
+    </div>
+  </section>
+  <section class="page-sidebar-left">
+    <div class="inner"></div>
+  </section>
+ </main>
+</div>

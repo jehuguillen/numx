@@ -20,7 +20,7 @@
 	<% if current_user.has_role? :teacher %>
 		<%= render "home/teacher_dashboard" %>
 	<% elsif current_user.has_role? :student %>
-		<%= render "home/student_dashboard" %>
+		<%= render "home/student_dashboard_geometry" %>
 	<% end %>
 <% end %>
 
