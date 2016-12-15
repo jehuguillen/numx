@@ -55,7 +55,8 @@
   .skill-icon.small {
     width: 80px;
     height: 80px;
-    margin: 0 0 13px 0;
+    left: -3px;
+    margin: 0 0 8px 0;
   }
   .skill-icon.red {
     background: #dd381d;
@@ -75,33 +76,33 @@
     margin: 13px 0 0 0;
   }
   .skill-icon.small .skill-icon-2 {
-    background-position: -55px 0;
+    background-position: -50px 0;
   }
   .skill-icon.small .skill-icon-image {
     background-size: 550px;
-    width: 55px;
+    width: 54px;
     height: 55px
   }
   .skill-icon.unlocked .skill-icon-image {
-    background-image: url(//d7mj4aqfscim2.cloudfront.net/images/skill-icons-unlocked2.svg);
+    background-image: url(<%= asset_path 'skill-i.svg' %>);
   }
   .skill-icon-image {
     display: inline-block;
   }
   .skill-icon-strength.strength-1 {
-    background-position: -14.8em 0;
+    background-position: 5.19em 0;
   }
   .skill-icon-strength-small {
-    width: 63px;
-    height: 120px;
-    top: -24px;
-    left: -22px;
-    background-size: 432px 432px;
-    font-size: 1em;
+    width: 69px;
+    height: 18px;
+    top: 67px;
+    left: 6.6px;
+   /* background-size: 432px 432px;*/
+    font-size: 21.9em;
   }
   .skill-icon-strength {
     position: absolute;
-    background: url(//d7mj4aqfscim2.cloudfront.net/images/skill-strength-sprite2.svg);
+    background: url(<%= asset_path 'skill-s.svg' %>);
   }
   .skill-badge-name {
     display: block;
@@ -144,7 +145,7 @@
     <div class="tree">
       <span class="skill-tree-header">
         <h1>Unidades de Geometría</h1>
-        <span class="level-text">NIVEL 5</span>
+<!--         <span class="level-text">NIVEL 5</span> -->
       </span>
       <ul class="skill-tree">
         <li class="skill-tree-row row-1">
@@ -154,7 +155,7 @@
                 <span class="skill-icon-image skill-icon-2"></span>
                 <span class="skill-icon-strength skill-icon-strength-small  strength-1"></span>
               </span>
-              <span class="skill-badge-name">Intro<span class="lessons-left"></span></span>
+              <span class="skill-badge-name">Conceptos Básicos<span class="lessons-left"></span></span>
             </a> 
           </span>
         </li> 

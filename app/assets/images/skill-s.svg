@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="69px" height="17px" viewBox="0 0 69 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M68.4161038,15.8426923 L68.4161038,6.36519231 L51.7968679,1.59538462 L51.7968679,15.8426923 L68.4161038,15.8426923 L68.4161038,15.8426923 Z M0,15.8426923 L0,6.36519231 L16.6198868,1.59538462 L16.6198868,15.8426923 L0,15.8426923 L0,15.8426923 Z M33.1154434,0.00523076923 L16.6198868,1.59407692 L16.6198868,16.4677692 L33.1154434,16.4677692 L33.1154434,16.4703846 L35.3227925,16.4703846 L35.3227925,16.4677692 L51.7975189,16.4677692 L51.7975189,1.59407692 L35.3221415,0.00784615385 L35.3221415,0 L33.1147925,0 L33.1147925,0.00523076923 L33.1154434,0.00523076923 Z" id="path-1"></path>
+        <polygon id="path-3" points="0.0299433962 14.5676923 0.0299433962 1.41034615 15.6525849 -8.8817842e-16 15.6525849 14.5676923"></polygon>
+        <polygon id="path-5" points="15.6525849 14.5676923 15.6525849 1.41034615 0.0299433962 -8.8817842e-16 0.0299433962 14.5676923"></polygon>
+        <polygon id="path-7" points="0.0299433962 12.6035385 0.0299433962 4.21992308 15.6525849 0 15.6525849 12.6035385"></polygon>
+        <polygon id="path-9" points="15.6525849 12.6035385 15.6525849 4.21992308 0.0299433962 0 0.0299433962 12.6035385"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="skill-strength-sprite">
+            <g id="Clipped">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="SVGID_1_"></g>
+                <rect id="Rectangle-path" fill="#FFFFFF" mask="url(#mask-2)" x="-3.25471698" y="-3.26923077" width="74.9255377" height="23.0088462"></rect>
+            </g>
+            <g id="Clipped" transform="translate(17.575472, 1.961538)">
+                <mask id="mask-4" fill="white">
+                    <use xlink:href="#path-3"></use>
+                </mask>
+                <g id="SVGID_3_"></g>
+                <rect id="Rectangle-path" fill="#F1CE30" mask="url(#mask-4)" x="-3.22477358" y="-3.26923077" width="22.1320755" height="21.1061538"></rect>
+            </g>
+            <g id="Clipped" transform="translate(35.150943, 1.961538)">
+                <mask id="mask-6" fill="white">
+                    <use xlink:href="#path-5"></use>
+                </mask>
+                <g id="SVGID_5_"></g>
+                <rect id="Rectangle-path" fill="#C4C2C5" mask="url(#mask-6)" x="-3.22477358" y="-3.26923077" width="22.1320755" height="21.1061538"></rect>
+            </g>
+            <g id="Clipped" transform="translate(0.000000, 3.923077)">
+                <mask id="mask-8" fill="white">
+                    <use xlink:href="#path-7"></use>
+                </mask>
+                <g id="SVGID_7_"></g>
+                <rect id="Rectangle-path" fill="#F1CE30" mask="url(#mask-8)" x="-3.22477358" y="-3.26923077" width="22.1320755" height="19.142"></rect>
+            </g>
+            <g id="Clipped" transform="translate(52.726415, 3.923077)">
+                <mask id="mask-10" fill="white">
+                    <use xlink:href="#path-9"></use>
+                </mask>
+                <g id="SVGID_9_"></g>
+                <rect id="Rectangle-path" fill="#C4C2C5" mask="url(#mask-10)" x="-3.22477358" y="-3.26923077" width="22.1320755" height="19.142"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
