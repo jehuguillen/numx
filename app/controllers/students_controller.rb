@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  def dashboard
+  def basics_angles
   end
 
   def profile

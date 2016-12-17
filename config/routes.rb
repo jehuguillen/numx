@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   }
 
   root to: "home#index"
+  get 'students/basics_angles'
 
   resources :courses 
   resources :skills 
