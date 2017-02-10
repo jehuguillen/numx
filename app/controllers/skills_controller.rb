@@ -1,4 +1,5 @@
 class SkillsController < ApplicationController
+  before_action :unautorize_student!
   before_action :set_skill, only: [:show, :edit, :update, :destroy]
 
   def index

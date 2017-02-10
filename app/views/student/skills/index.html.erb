@@ -1,3 +1,18 @@
+<% @skills.each do |s| %>
+<div class="row">
+	<div class="col-md-12 skill-container">
+		<h3><span class="course-span" style="cursor: pointer"> <%= s.name %> </span> </h3>
+	</div>
+</div>
+<% end %>
+
+<!-- <div class="row">
+	<% current_user.courses.each do |c| %>
+		<div class="col-md-4">
+			<%= link_to c.name, skills_path(course_id: c.id) %>
+		</div>  
+	<% end %>
+</div> -->
 
 <style type="text/css">
   body {
@@ -13,7 +28,7 @@
   }
   .page-main-right {
     width: 680px;
-    height: 900px;
+    height: 9000px;
     background-color: #fff;
     border-radius: 10px;
     position: relative;
@@ -45,12 +60,6 @@
     transition: all .5s;
   }
   .skill-icon.small {
-    width: 78px;
-    height: 80px;
-    left: -3px;
-    margin: 0 0 8px 0;
-  }
-  .skill-iconn.ball {
     width: 80px;
     height: 80px;
     left: -3px;
@@ -68,31 +77,16 @@
   .skill-icon.green {
     background: #7eb530;
   }
-  .skill-iconn.green {
-    background: #7eb530;
-  }
   .skill-icon.softcyan {
     background: #46e5e6;
   }
-  .skilvividpink.yellow {
+  .skill-icon.yellow {
     background: #ffff00;
   }
-  
-  .purple {
-    color: #9b5fca;
-  }
   .skill-icon {
-    -webkit-border-radius: 2px;
+    -webkit-border-radius: 400px;
     -moz-border-radius: 400px;
-/*    border-radius: 400px;*/
-    display: inline-block;
-    position: relative;
-    text-align: center;
-  }
-  .skill-iconn {
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 0px;
-      border-radius: 0px;
+    border-radius: 400px;
     display: inline-block;
     position: relative;
     text-align: center;
@@ -101,16 +95,13 @@
     color: #dd381d;
   }
   .skill-icon.small .skill-icon-image {
-    margin: 7px 0 0 0;
+    margin: 13px 0 0 0;
   }
   .skill-icon.small .skill-icon-1 {
     background-position: -50px 0;
   }
   .skill-icon.small .skill-icon-2 {
     background-position: -110px 0;
-  }
-  .skill-icon.small .skill-icon-22 {
-    background-position: -110px -47px;
   }
   .skill-icon.small .skill-icon-3 {
     background-position: -165px 0;
@@ -122,13 +113,7 @@
     background-position: -275px 0;
   }
   .skill-icon.small .skill-icon-6 {
-    background-position: -334px 0;
-  }
-  .skill-icon.small .skill-icon-7 {
-    background-position: -386px 0;
-  }
-  .skill-icon.small .skill-icon-8 {
-    background-position: -385px -55px;
+    background-position: -333px 0;
   }
   .skill-icon.small .skill-icon-image {
     background-size: 550px;
@@ -142,10 +127,10 @@
     display: inline-block;
   }
   .skill-icon-strength.strength-1 {
-    background-position: 10.155em 0;
+    background-position: -2.9879em 0;
   }
   .skill-icon-strength.strength-2 {
-    background-position: 10.155em 0;
+    background-position: -3.5705em 0;
   }
   .skill-icon-strength.strength-3 {
     background-position: -3em 0;
@@ -154,10 +139,10 @@
     background-position: -3em 0;
   }
   .skill-icon-strength-small {
-    width: 84px;
+    width: 69px;
     height: 18px;
-    top: 68px;
-    left: -4.9px;
+    top: 67px;
+    left: 4px;
    /* background-size: 432px 432px;*/
     font-size: 9.83em;
   }
@@ -212,12 +197,21 @@
       <ul class="skill-tree">
         <li class="skill-tree-row row-1">
           <span id="skill-0-1" class="skill-0">
-            <a href="student/basics_angles" class="fade-this-in skill-badge-small" data-skill="C. Basicos" style="opacity: 1;">
+            <a href="/lessons/basics_angles" class="fade-this-in skill-badge-small" data-skill="C. Basicos" style="opacity: 1;">
               <span class="skill-icon green small unlocked ">
                 <span class="skill-icon-image skill-icon-1"></span>
                 <span class="skill-icon-strength skill-icon-strength-small  strength-2"></span>
               </span>
               <span class="skill-badge-name">Básicos<span class="lessons-left"></span></span>
+            </a> 
+          </span>
+          <span id="skill-0-1" class="skill-0">
+            <a href="/lessons/basics_angles" class="fade-this-in skill-badge-small" data-skill="C. Basicos" style="opacity: 1;">
+              <span class="skill-icon green small unlocked ">
+                <span class="skill-icon-image skill-icon-1"></span>
+                <span class="skill-icon-strength skill-icon-strength-small  strength-2"></span>
+              </span>
+              <span class="skill-badge-name">Básicos II<span class="lessons-left"></span></span>
             </a> 
           </span>
         </li> 
@@ -234,13 +228,12 @@
           <span id="skill-1-2" class="skill-0">
             <a href="/skill/en/Introduction" class="fade-this-in skill-badge-small" data-skill="Ángulos" style="opacity: 1;">
               <span class="skill-icon blue small unlocked ">
-                <span class="skill-icon-image skill-icon-22"></span>
+                <span class="skill-icon-image skill-icon-2"></span>
                 <span class="skill-icon-strength skill-icon-strength-small  strength-1"></span>
               </span>
-              <span class="skill-badge-name">Ángulos 2<span class="lessons-left"></span></span>
+              <span class="skill-badge-name">Ángulos<span class="lessons-left"></span></span>
             </a> 
           </span>
-        </li> 
         <li class="skill-tree-row row-3">
           <span id="skill-1-3" class="skill-0">
             <a href="/skill/en/Introduction" class="fade-this-in skill-badge-small" data-skill="Triángulos" style="opacity: 1;">
@@ -250,8 +243,7 @@
               </span>
               <span class="skill-badge-name">Triángulos<span class="lessons-left"></span></span>
             </a> 
-          </span>
-          <span id="skill-2-3" class="skill-0">
+          </span><span id="skill-1-4" class="skill-0">
             <a href="/skill/de/Basics-2" class="fade-this-in skill-badge-small" data-skill="T. Congruentes" style="opacity: 1;">
               <span class="skill-icon vividpink small unlocked ">
                 <span class="skill-icon-image skill-icon-4"></span>
@@ -260,7 +252,7 @@
               <span class="skill-badge-name">Congruentes<span class="lessons-left"></span></span>
             </a>
           </span>
-          <span id="skill-2-3" class="skill-1">
+          <span id="skill-2-4" class="skill-1">
             <a href="/skill/de/Common-Phrases" class="fade-this-in skill-badge-small" data-skill="T. Semejantes" style="opacity: 1;">
             <span class="skill-icon vividpink small unlocked ">
               <span class="skill-icon-image skill-icon-5"></span>
@@ -269,37 +261,57 @@
             <span class="skill-badge-name">Semejantes<span class="lessons-left"></span></span>
             </a> 
           </span>
-          </li>
-          <li class="skill-tree-row row-1">
-          <span id="skill-0-1" class="skill-0">
-            <a href="/students/basics_angles" class="fade-this-in skill-badge-small" data-skill="C. Basicos" style="opacity: 1;">
-              <span class="skill-icon green small unlocked ">
+        </li>
+        <li class="skill-tree-row row-1">
+          <span id="skill-1-3" class="skill-0">
+            <a href="/skill/en/Introduction" class="fade-this-in skill-badge-small" data-skill="Triángulos" style="opacity: 1;">
+              <span class="skill-icon blue small unlocked ">
                 <span class="skill-icon-image skill-icon-6"></span>
-                <span class="skill-icon-strength skill-icon-strength-small  strength-2"></span>
+                <span class="skill-icon-strength skill-icon-strength-small  strength-1"></span>
               </span>
-              <span class="skill-badge-name">Pitágoras<span class="lessons-left"></span></span>
+              <span class="skill-badge-name">Teorema De Pitágoras<span class="lessons-left"></span></span>
             </a> 
           </span>
         </li> 
         <li class="skill-tree-row row-1">
-          <span id="skill-0-1" class="skill-0">
-            <a href="/students/basics_angles" class="fade-this-in skill-badge-small" data-skill="C. Basicos" style="opacity: 1;">
-              <span class="skill-icon blue small unlocked ">
-                <span class="skill-icon-image skill-icon-7"></span>
-                <span class="skill-icon-strength skill-icon-strength-small  strength-2"></span>
-              </span>
-              <span class="skill-badge-name">Polígonos<span class="lessons-left"></span></span>
-            </a> 
-          </span>
-          <span id="skill-0-1" class="skill-0">
-            <a href="/students/basics_angles" class="fade-this-in skill-badge-small" data-skill="C. Basicos" style="opacity: 1;">
-              <span class="skill-icon blue small unlocked ">
-                <span class="skill-icon-image skill-icon-8"></span>
-                <span class="skill-icon-strength skill-icon-strength-small  strength-2"></span>
+          <span id="skill-1-3" class="skill-0">
+            <a href="/skill/en/Introduction" class="fade-this-in skill-badge-small" data-skill="Triángulos" style="opacity: 1;">
+              <span class="skill-icon vividpink small unlocked ">
+                <span class="skill-icon-image skill-icon-3"></span>
+                <span class="skill-icon-strength skill-icon-strength-small  strength-1"></span>
               </span>
               <span class="skill-badge-name">Circunferencia<span class="lessons-left"></span></span>
             </a> 
-          </span>          
+          </span>
+        </li> 
+        <li class="skill-tree-row row-3">
+          <span id="skill-1-4" class="skill-0">
+            <a href="/skill/de/Basics-2" class="fade-this-in skill-badge-small" data-skill="T. Congruentes" style="opacity: 1;">
+              <span class="skill-icon vividpink small unlocked ">
+                <span class="skill-icon-image skill-icon-4"></span>
+                <span class="skill-icon-strength skill-icon-strength-small  strength-1"></span>
+              </span>
+              <span class="skill-badge-name">Trigonometría<span class="lessons-left"></span></span>
+            </a>
+          </span>
+          <span id="skill-2-4" class="skill-1">
+            <a href="/skill/de/Common-Phrases" class="fade-this-in skill-badge-small" data-skill="T. Semejantes" style="opacity: 1;">
+            <span class="skill-icon vividpink small unlocked ">
+              <span class="skill-icon-image skill-icon-5"></span>
+              <span class="skill-icon-strength skill-icon-strength-small  strength-1"></span>
+            </span>
+            <span class="skill-badge-name">Seno y Coseno<span class="lessons-left"></span></span>
+            </a> 
+          </span>
+            <span id="skill-2-4" class="skill-1">
+            <a href="/skill/de/Common-Phrases" class="fade-this-in skill-badge-small" data-skill="T. Semejantes" style="opacity: 1;">
+            <span class="skill-icon vividpink small unlocked ">
+              <span class="skill-icon-image skill-icon-5"></span>
+              <span class="skill-icon-strength skill-icon-strength-small  strength-1"></span>
+            </span>
+            <span class="skill-badge-name">Seno y Coseno<span class="lessons-left"></span></span>
+            </a> 
+          </span>
         </li> 
       </ul>
     </div>

@@ -1,4 +1,5 @@
 class LessonsController < ApplicationController
+before_action :unautorize_student!
 before_action :set_lesson, only: [:show, :edit, :update, :destroy]
   
   def index
