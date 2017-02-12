@@ -9,9 +9,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    if params[:user][:u] == 'teacher'
+      params[:user][:role_ids] = [1]
+    elsif params[:user][:u] == 'student'
+      params[:user][:role_ids] = [2]
+    end
+    binding.pry
+    super
+  end
 
   # GET /resource/edit
   # def edit

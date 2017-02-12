@@ -20,7 +20,7 @@
           <%= link_to current_user.email, profile_path(current_user) %>
         </li>
         <li class="dropdown">
-          <%= link_to('Salir', destroy_user_session_path, :method => :delete) %>
+          <%= link_to('Salir', destroy_user_session_path) %>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
