@@ -15,7 +15,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     elsif params[:user][:u] == 'student'
       params[:user][:role_ids] = [2]
     end
-    binding.pry
     super
   end
 
