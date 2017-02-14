@@ -19,8 +19,8 @@ Rails.application.routes.draw do
 
   namespace :students do
     resources :profiles, only: [:show]
-    resources :courses, only: [:index, :create] do
-      resources :skills, only: [:index]
+    resources :courses, only: [:index, :show] do
+      resources :skills, only: [:index, :show]
       resources :lessons, only: [:basics_angles]
     end
   end
