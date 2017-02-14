@@ -1,0 +1,29 @@
+<div class="btn-group btn-group-justified">
+  <%= link_to 'New Lesson', new_teachers_lesson_path, class: 'btn btn-info' %>
+</div>
+
+<br>
+<br>
+
+<table class="col-md-6, table">
+  <thead>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Skill</th>
+    <th>Course</th>
+    <th><span class="glyphicon glyphicon-pencil"></span></th>
+    <th><span class="glyphicon glyphicon-trash" ></span></th>
+  </thead>
+  <tbody>
+    <% @lessons.each do |l| %>
+      <tr>
+        <td><%= link_to l.name, teachers_lesson_path(l) %></td>
+        <td><%= l.description %></td>
+        <td><%= l.skill.name %></td>
+        <td><%= l.skill.course.name %></td>
+        <td><%= link_to 'Edit', edit_teachers_lesson_path(l), class: 'btn btn-default' %></td>
+        <td><%= link_to 'X', teachers_lesson_path(l), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

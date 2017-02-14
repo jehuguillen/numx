@@ -15,46 +15,36 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <% if can? :read, Course %>
-          <li>
-            <%= link_to 'Courses', courses_path, class: 'btn btn-link' %>
-          </li>
-        <% end %>
-
-        <% if can? :read, Skill %>
-          <li>
-            <%= link_to 'Skills', skills_path, class: 'btn btn-link' %>
-          </li>
-        <% end %>
-        
-        <% if can? :read, Lesson %>
-          <li>
-            <%= link_to 'Lessons', lessons_path, class: 'btn btn-link' %>
-          </li>
-        <% end %>
-        
-        <% if can? :read, Question %>
-          <li>
-            <%= link_to 'Questions', questions_path, class: 'btn btn-link' %>
-          </li>
-        <% end %>
-        
-        <% if can? :read, Answer %>
-          <li>
-            <%= link_to 'Answers', answers_path, class: 'btn btn-link' %>
-          </li>
-        <% end %>
-
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <%= link_to current_user.email, profile_path(current_user) %>
-          </li>
-          <li class="dropdown">
-            <%= link_to('Salir', destroy_user_session_path) %>
-          </li>
-            </ul>
+        <li>
+          <%= link_to 'Courses', teachers_courses_path, class: 'btn btn-link' %>
         </li>
+
+        <li>
+          <%= link_to 'Skills', teachers_skills_path, class: 'btn btn-link' %>
+        </li>
+
+        <li>
+          <%= link_to 'Lessons', teachers_lessons_path, class: 'btn btn-link' %>
+        </li>
+
+        <li>
+          <%= link_to 'Questions', teachers_questions_path, class: 'btn btn-link' %>
+        </li>
+
+        <li>
+          <%= link_to 'Answers', teachers_answers_path, class: 'btn btn-link' %>
+        </li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to current_teacher.email, teachers_profile_path(current_teacher) %>
+        </li>
+        <li class="dropdown">
+          <%= link_to('Salir', destroy_teacher_session_path) %>
+        </li>
+      </ul>
+      </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

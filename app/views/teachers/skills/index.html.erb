@@ -1,0 +1,30 @@
+<div class="btn-group btn-group-justified">
+  <%= link_to 'New Skill', new_teachers_skill_path, class: 'btn btn-info' %>
+</div>
+
+<br>
+<br>
+
+<table class="table">
+  <thead>
+    <th>Name</th>
+    <th>Nº Lessons</th>
+    <th>Course</th>
+    <th><span class="glyphicon glyphicon-pencil"></span></th>
+    <th><span class="glyphicon glyphicon-trash" ></span></th>
+  </thead>
+  <tbody>
+    <% @skills.each do |s| %>
+      <tr>
+        <td><%= link_to s.name, teachers_skill_path(s) %></td>
+        <td></td>
+        <td><%= s.course.name %></td>
+        <td>
+          <%= link_to 'Edit', edit_teachers_skill_path(s), class: 'btn btn-default' %>
+        </td>
+        <td>
+          <%= link_to 'X', teachers_skill_path(s), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </td>
+      <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,29 @@
+<button type="button" class="btn btn-default">
+  <span class="glyphicon glyphicon-plus"></span>
+  <%= link_to ' Add New Course', new_teachers_course_path %>
+</button>
+
+<hr>
+<br>
+
+<div class="row">
+  <div class="col-md-6">
+    <label for="">Name:</label>
+    <%= @course.name %>
+  </div>
+  <div class="col-md-6">
+    <label for="">Code:</label>
+    <%= @course.code %>
+  </div>
+</div>
+
+<hr>
+
+<button type="button" class="btn btn-default">
+  <span class="glyphicon glyphicon-chevron-left"></span>
+  <%= link_to 'Back', teachers_courses_path %>
+</button>
+<button type="button" class="btn btn-default">
+  <span class="glyphicon glyphicon-pencil"></span>
+  <%= link_to ' Edit', edit_teachers_course_path %>
+</button>

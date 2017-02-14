@@ -1,0 +1,29 @@
+<div class="btn-group btn-group-justified">
+  <%= link_to 'New Question', new_teachers_question_path, class: 'btn btn-info' %>
+</div>
+
+<br>
+<br>
+
+<table class="col-md-6, table">
+  <thead>
+    <th>Name</th>
+    <th>Lesson</th>
+    <th>Skill</th>
+    <th>Course</th>
+    <th><span class="glyphicon glyphicon-pencil"></span></th>
+    <th><span class="glyphicon glyphicon-trash" ></span></th>
+  </thead>
+  <tbody>
+    <% @questions.each do |q| %>
+      <tr>
+        <td><%= link_to q.name, teachers_question_path(q) %></td>
+        <td><%= q.lesson.name %></td>
+        <td><%= q.lesson.skill.name %></td>
+        <td><%= q.lesson.skill.course.name %></td>
+        <td><%= link_to 'Edit', edit_teachers_question_path(q), class: 'btn btn-default' %></td>
+        <td><%= link_to 'X', teachers_question_path(q), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

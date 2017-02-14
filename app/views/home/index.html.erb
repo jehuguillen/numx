@@ -1,21 +1,10 @@
-<div class="all">
-	
-</div>
-
-<% unless user_signed_in? %>
-	<div class="btn btn-link"><%= link_to 'Soy Un Profesor', new_user_registration_path(u: 'teacher'), class: 'btn btn-link' %></div>
-	<div class="btn btn-link"><%= link_to 'Soy Un Estudiente', new_user_registration_path(u: 'student'), class: 'btn btn-link' %></div>
+<% unless teacher_signed_in? || student_signed_in? %>
+  <div class="btn btn-link"><%= link_to 'Soy Un Profesor', new_teacher_registration_path, class: 'btn btn-link' %></div>
+  <div class="btn btn-link"><%= link_to 'Soy Un Estudiente', new_student_registration_path, class: 'btn btn-link' %></div>
 <% end %>
 
-<% if user_signed_in? %>
-	<% if current_user.has_role? :teacher %>
-		<%= render "home/teacher_dashboard" %>
-	<% elsif current_user.has_role? :student %>
-		<%= render "home/student_skills_geometry" %>
-	<% end %>
+<% if teacher_signed_in? %>
+  <%= render "home/teacher_dashboard" %>
+<% elsif student_signed_in? %>
+  <%= render "home/student_skills_geometry" %>
 <% end %>
-
-
-<% unless user_signed_in? %>
-    <%= link_to('Ingresar', new_user_session_path, class: 'btn btn-info')  %>
-  <% end %> 

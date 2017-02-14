@@ -1,0 +1,7 @@
+<%= simple_form_for [:teachers, @course] do |f| %>
+<%= f.input :name %>
+<%= f.input :code %>
+
+<%= link_to 'Cancel', teachers_courses_path, class: 'btn btn-default' %>
+<%= f.submit nil, class: 'btn btn-primary' %>
+<% end  %>

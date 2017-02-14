@@ -4,7 +4,6 @@ gem 'mini_magick'
 gem 'simple_form'
 gem 'rails_12factor'
 gem 'devise'
-gem "rolify"
 gem 'cancancan', '~> 1.10'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -17,10 +17,10 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%= link_to current_user.email, profile_path(current_user) %>
+          <%= link_to current_student.email, students_profile_path(current_student) %>
         </li>
         <li class="dropdown">
-          <%= link_to('Salir', destroy_user_session_path) %>
+          <%= link_to('Salir', destroy_student_session_path) %>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
